@@ -1,0 +1,58 @@
+% !TeX program = latexmk
+% % !TeX program = xelatex
+\documentclass[
+	12pt,
+	oneside,
+	a4paper,
+	extrafontsizes
+	, draft
+]{memoir}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Preamble                         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{metadata.tex}
+\input{packages.tex}
+\input{commands.tex}
+\input{style.tex}
+\input{alias.tex}
+
+%%% Customize for users to produce various versions easily, WIP
+% \input{config.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Frontmatter                      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\chapterstyle{main}
+
+\maketitle
+
+\frontmatter
+\clearpage
+\currentpdfbookmark{目录}{toc}
+\tableofcontents*
+
+\hypersetup{
+	linkcolor=blue
+}
+
+\input{divisions/preface.tex}
+
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%            Chapters                          %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\figurename}{图} % must be around here to work
+\renewcommand{\tablename}{表}
+
+\input{divisions/c1.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             Backmatter                       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
+
+\end{document}
+ 

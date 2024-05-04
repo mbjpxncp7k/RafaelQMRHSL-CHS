@@ -1,0 +1,67 @@
+\chapter{导言}
+
+本章将概述本论文的内容。这些内容主要是关于\dirac 右矢、\lippmann-\schwinger 右矢、\gamow 向量的性质。
+
+% quote
+
+本文是关于\dirac 右矢、\lippmann-\schwinger 右矢、\gamow 向量在\rhs 语言中的表述。
+\dirac 右矢是关联于一个可观测量的谱点的态向量。
+\lippmann-\schwinger 右矢是与散射理论有关的\hamiltonian 的本征右矢。
+它们对应于\longRadicalTranslation{等能}{monoenergetic}“入”散射态和“出”散射态。
+\gamow 向量是表示共振的态向量的右矢。
+我们的主要目标是展现：\rhs 是对刻画这些右矢而言最合适的框架。
+我们将用例子来说明这一点，而不是完全停留于抽象的讨论。主要用到的两个例子是谐振子和方势垒。
+
+本文未讨论任何实验数据，而是关注于解释和理解这些数据的方法、思想和原则。
+我们将用配备各种边界条件的\schrodinger 方程来作为提供数据的模型。
+\schrodinger 方程上的各种边界条件将给出\dirac 右矢、\lippmann-\schwinger 右矢、\gamow 向量。
+这样的模型涉及了一种理想化，但这可能仍是理解这些态向量为何物的最佳方式。
+
+须注意，\RHS\emph{不是}对量子力学的一种阐释，而是一种表述如\dirac 右矢、\lippmann-\schwinger 右矢、\gamow 向量这样的启发性的物理概念的更自然、精确、逻辑化的语言。
+
+\section{\rhs 简史}
+
+在1920年代末，\dirac 引入了量子力学的一种新数学模型，它是基于无穷维复内积向量空间上线性算子所构的一种\longRadicalTranslation{唯一的光滑而精致}{uniquely smooth and elegant}的抽象代数。%cite
+\dirac 的\terminology{左矢}、\terminology{右矢}（源于内积的括号记法）的抽象代数模型在之后的年头里已证明是有着巨大的启发价值——尤其是在处理具有连续谱的\hamilton 算子时。
+然而，在寻找一种可用于实际数值计算的线性代数时则出现了严重的困难。
+
+\introduceAbbreviation{\hs}{HS}是为量子力学提出的第一种数学\shortRadicalTranslation{形式化}{idealization}模型
+然而，如\neumann 在他的书中解释的那样，\HS 理论和\dirac 体系是两回事。尽管有在\hs 中实现\dirac 模型的尝试，仍有不少严重问题使得这体系无法给出左矢、右矢或\deltafunc ，或是无法给\dirac 基向量展开以一个数学含义——而这种展开在涉及连续谱的量子力学的物理表述中都是及其重要的。
+当然，\dirac 在他的文字报告中表示：\quoteText{我们目前所用的左矢和右矢构成了一个比\hs 更一般的空间。}。%cite
+
+在1940年代末，%cite
+为\deltafunc 给出了精确的含义，它定义为一种测试函数空间上的线性泛函。
+这导向了泛函分析的一个新分支的发展：分布理论。%cite
+
+大约是与此同时，\neumann 发表了\hs 的由一个自伴算子诱导的直积分分解理论（也对更一般的情况成立）。%cite
+这种谱理论更接近于经典\fourier 分析，它代表了对更早的\neumann 谱理论的一项改进。%cite
+
+%cite
+则总是认为\neumann 谱理论并非无穷维向量空间上线性算子理论的完整故事。
+获益于分布理论的发展，他与其学派引入了\introduceAbbreviation{\rhs}{RHS}。
+从这\rhs 和\neumann 的直积分分解出发，他们得以证明所谓核型谱定理（也称为\gelfand-\maurin 定理）。%cite
+该定理为算子的谱性质提供了更为彻底的信息，并在相同立足点上处理了连续谱与离散谱。
+
+作为\dirac 体系的一面，可观测量代数中元素的连续性在1960年代初得到了讨论。%cite
+若可观测量代数中的两个算子满足\canonical（\heisenberg）对易关系，则它们中至少有一个不能在\hs 拓扑下是连续的（即，有界的）。
+%cite
+证明了\hs 中有这样一些子定义域，其上可配备使得那些算子连续的拓扑。而这些子定义域中最大的就是\schwartz 空间。
+
+在1960年代末，一些物理学家独立地意识到\RHS 为\dirac 体系的所有方面都提供了一个严格的数学表述。%cite
+特别地，核型谱定理在数学理论中重新表述了\dirac 基向量展开和\dirac 左、右矢。
+之后，其他作者也得到了相同结论。%cite
+如今，\RHS 已成为教科书中的内容。%cite
+
+在过去一些年中，\RHS 作为散射与衰变理论的自然的数学语言而出现。%cite
+\RHS 也被证明在其他理论物理领域中很有用处，如混沌映射的广义谱分解的构造。%cite
+实际上，为以一种\longRadicalTranslation{自恰}{consistent}的方式来处理散射与衰变，\RHS 似乎是最为人所知的语言。
+这就是我们为何在此使用它。
+
+\schrodinger 方程是统御量子系统行为的动力学方程。
+于是任何试图证明\RHS 包含量子力学所需的数学方法的尝试，都应展现\RHS 是\schrodinger 方程\shortRadicalTranslation{之解}{solutions of}的自然框架。
+本论文的目的在于得到作为不同边界条件下\schrodinger 方程的解的\dirac、\lippmann-\schwinger、\gamow 右矢，
+并展示这些解是落在\RHS 中而非仅仅是在\HS 中。%cite
+
+最终，本文的这些结论将允许我们描绘出一个非常重要的结论：\RHS 是处理散射与衰变的自然语言。
+
+\section{谐振子}
