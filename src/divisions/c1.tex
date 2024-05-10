@@ -65,3 +65,81 @@
 最终，本文的这些结论将允许我们描绘出一个非常重要的结论：\RHS 是处理散射与衰变的自然语言。
 
 \section{谐振子}
+
+若一可观测量的谱是离散的，则\hs 的数学方法对于量子力学而言已是充分的。
+然而，若一可观测量的谱有连续的部分，\hs 的数学方法则还不够，需要这些方法的一种扩展。
+
+物理学家使用\dirac 的左右矢体系来处理连续谱。
+四种这种体系的最重要特性是：
+\begin{enumerate}
+	\item 对于\(A\)中谱的任一元素\(\lambda\)，都有一对应的右矢\(\ket\lambda\)，其是\(A\)的关于本征值\(\lambda\)的本征矢：
+	\[\label{eq:dirac_formalism_feature_1}
+		A\ket\lambda=\lambda\ket\lambda.\]
+	\item 一个波函数\(\varphi\)可用这些本征右矢展开\footnote{下式被称为\dirac 基向量展开}：
+	\[\label{eq:dirac_formalism_feature_2}
+		\varphi=\int_{\operatorname{Spectrum}(A)}\dd\lambda\ket\lambda\braket{\lambda|\varphi}.\]
+	\item 本征右矢按下面的规则归一化：
+	\[\braket{\lambda|\lambda'}=\delta(\lambda-\lambda'),\]
+	其中\(\delta(\lambda-\lambda')\)是\deltafunc 。
+	\item 所有代数运算，如两个可观测量\(A,B\)间的对易子
+	\[\label{eq:dirac_formalism_feature_4}
+		\cmtt{A}{B}\defeq AB-BA.\]
+	都是良定义的。
+\end{enumerate}
+	
+在量子力学中，可观测量被假定是定义于\hs\(\cH\)上的自伴线性算子。
+若关联于一个可观测量的算子\(A\)是无界的（这是量子力学中最常见的情况），\(A\)则仅定义在一个子域\(\cD(A)\)上，在其上\(A\)得以是自伴的。
+在这种情况下，\hs 方法并不足以使\crefrange{eq:dirac_formalism_feature_1}{eq:dirac_formalism_feature_4}有意义。
+而\RHS 体系则提供了使它们得以有意义的所需的数学。
+
+另一方面，量子力学的关键假设之一是，量
+\[\label{eq:expectation}
+	inner{\varphi}{A\varphi}\]
+表示了在态\(\varphi\)下进行可观测量\(A\)的测量的结果期望值，且
+\[\label{eq:variance}
+	\Delta_\varphi A\defeq\sqrt{\inner{\varphi}{A^2\varphi}-inner{\varphi}{A\varphi}^2}\]
+表示了在态\(\varphi\)下进行可观测量\(A\)的测量的不确定度（假定波函数\(\varphi\)归一化到一了）。
+并不是\hs\(\cH\)中的任一元素都能计算\nref{期望值}{eq:expectation}，只有那些也属于\(\cD(A)\)的\(\varphi\in\cH\)才行。
+类似地，\nref{不确定度}{eq:variance}也不能对\hs\(\cH\)中的全部元素计算，而只能对\(\cD(|A|)\)中的计算。%cite
+若我们取那些可计算\nref{期望值}{eq:expectation}、\nref{不确定度}{eq:variance}等物理量的可归一化函数为物理上的状态，那么很明显并非任一可平方归一化的函数（即，\(\cH\)中的元素）都能表示一个物理状态。
+如我们将见到的，自然的物理波函数空间是\(\cH\)中的一个子空间\(\Phi\)，因为其元素的所有物理量都可计算。
+进一步来说，\(\Phi\)也具备\dirac 体系的所有好处。
+
+作为例子，我们考虑谐振子。谐振子的代数包含有位置\(Q\)和动量\(P\)这两个可观测量。
+这些可观测量定义为\(\cH\)上的线性算子，并满足\ccr：
+\[\label{eq:CCR}
+	\cmtt{P}{Q}\defeq PQ-QP=-i\hbar I.\]
+众所周知的是，\cref{eq:CCR}意味着\(P\)\longRadicalTranslation{或}{either ... or ...}\(Q\)是一个无界算子。
+这意味着\(P\)或\(Q\)不能定义于整个\hs 上——它们实际上定义域特定的稠密子域\(\cD(P)\)、\(\cD(Q)\)上，在其上\(P\)和\(Q\)是自伴的。
+因此，表达式\(PQ-QP\)不能定义在整个\hs 上。
+此外，由于\(\cD(P)\)、\(\cD(Q)\)在\(P\)、\(Q\)的作用下不再是\longRadicalTranslation{不变}{stable}的，表达式\(PQ-QP\)仅对那些满足\(\varphi\in\cD(Q),\varphi\in\cD(P),P\varphi\in\cD(Q),Q\varphi\in\cD(P)\)的\(\varphi\in\cH\)有定义。
+因此，\nref{\ccr}{eq:CCR}并非定义于整个\(\cH\)上，而仅定义于其一个子空间。
+回想起\cref{eq:CCR}可推出\hur：
+\[\label{eq:HUR}
+	\Delta_\varphi P\ \Delta_\varphi Q\geq\frac{\hbar}{2}.\]
+现在，若希望\(H,P,Q\)的期望值
+\[\inner{\varphi}{A\varphi},\quad A=H,P,Q,\]
+\(H,P,Q\)的不确定度
+\[\label{eq:uncertainty_HPQ}
+	\Delta_\varphi A,\quad A=H,P,Q,\]
+和\nref{\hur}{eq:HUR}是良定义的，则可平方归一化波函数\(\varphi\)不但是处于\(\cH\)中，还须处于\(\cD(P),\cD(Q),\cD(H),\cD(|P|),\cD(|Q|),\cD(|H|)\)中。
+
+因此，一个使得物理量\crefrange{eq:CCR}{eq:uncertainty_HPQ}能够计算的\(\cH\)的子域\(\Phi\)是必要的。
+显然，\(\Phi\)应在\(P,Q,H\)的作用下\silentRadicalTranslation{不变}{stable}。
+看上去\(\Phi\)的最佳候选是\(P,Q,H\)的各阶幂的定义域之交：
+\[\label{eq:PQH_power_intersec}
+	\Phi=\bigcap_{n=0\\A=P,Q,H}^\infty\cD(A^n).\]
+\cref{eq:PQH_power_intersec}的空间是谐振子代数的极大不变子空间。
+在\(\Phi\)上，所有的物理量如期望、不确定度都可以计算。
+代数关系如\ccr 在\(\Phi\)上都是良定义的。
+特别地，\hur 在\(\Phi\)上是良定义的。
+
+谐振子的\hamilton 算子的谱是离散的，且其本征矢是可平方归一化的（实际上，它们是\(\phi\)的元素）。
+这意味着，就考虑\(H\)的本征矢的而言，没有超出\hs \(\cH\)的必要。
+然而，位置、动量可观测量的谱是连续的，且与实数集\longRadicalTranslation{重合}{coincide}。
+依照假定\cref{eq:dirac_formalism_feature_1}，我们为\(P\)的（连续）谱中的每一元素\(p\)向量\(\ket p\)：
+\[P\ket p=p\ket p,\quad -\infty<p<+\infty.\]
+根据\cref{eq:dirac_formalism_feature_2}，一个波函数可用这些本征右矢展开：
+\[\varphi=\infty_{-\infty}^{+\infty}\dd p\ket p\braket{p|\varphi}.\]
+显然，右矢\(\ket p\)并不在\hs 中——需要一个更大的线性空间来容纳它们。
+\longRadicalTranslation{这时}{It happens that}那些\(\ket p\)获得了作为\(\Phi\)上的反线性泛函的含义。即，\(\ket p\in\Phi^\times\)

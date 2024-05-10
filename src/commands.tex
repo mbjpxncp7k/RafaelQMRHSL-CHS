@@ -14,6 +14,8 @@
 \xspace#1(#2)\xspace%
 }
 
+\newcommand*{\silentRadicalTranslation}[2]{#1}
+
 \newcommand*{\longRadicalTranslation}[2]{%
 	\xspace\CJKunderline*{#1}\footnote{译者注：原文为：「#2」。}\xspace%
 }
@@ -54,5 +56,19 @@
 }
 \makeatother%
 
+\newcommand{\nref}[2]{#1(\ref{#2})}
+
 \newcommand{\dd}{{\mathrm d}}
 \newcommand{\pd}{\partial}
+\newcommand{\cmtt}[2]{\left[#1,#2\right]}
+\newcommand{\inner}[2]{\left(#1,#2\right)}
+\newcommand{\defeq}{=}
+% \def\proj#1{{\ket{#1}\kern-3pt\bra{#1}}}
+% \def\basis#1#2{{\{\ket{#1_{#2}}\}}_{#2}}
+% \def\abss#1{{|{#1}|}^2}
+
+\def\cH{\mathcal H}
+\def\cD{\mathcal D}
+
+\def\[{\begin{equation}}
+\def\]{\end{equation}}
