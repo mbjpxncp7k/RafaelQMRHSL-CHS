@@ -12,7 +12,7 @@
 
 \newcommand*{\shortRadicalTranslation}[2]{%
 \xspace#1(#2)\xspace%
-}
+}% may have better typesetting, such as superscripted braketed text
 
 \newcommand*{\silentRadicalTranslation}[2]{#1}
 
@@ -63,12 +63,17 @@
 \newcommand{\cmtt}[2]{\left[#1,#2\right]}
 \newcommand{\inner}[2]{\left(#1,#2\right)}
 \newcommand{\defeq}{=}
+\newcommand{\defaseq}{\equiv}
+\newcommand{\pdo}[1]{\frac{\pd}{\pd #1}}
 % \def\proj#1{{\ket{#1}\kern-3pt\bra{#1}}}
 % \def\basis#1#2{{\{\ket{#1_{#2}}\}}_{#2}}
 % \def\abss#1{{|{#1}|}^2}
+\def\sp{\operatorname{Sp}}
 
 \def\cH{\mathcal H}
 \def\cD{\mathcal D}
+\def\cS{\mathcal S}
+\def\R{\mathbb R}
 
 \def\[{\begin{equation}}
 \def\]{\end{equation}}

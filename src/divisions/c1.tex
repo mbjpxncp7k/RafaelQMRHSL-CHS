@@ -140,6 +140,97 @@
 依照假定\cref{eq:dirac_formalism_feature_1}，我们为\(P\)的（连续）谱中的每一元素\(p\)向量\(\ket p\)：
 \[P\ket p=p\ket p,\quad -\infty<p<+\infty.\]
 根据\cref{eq:dirac_formalism_feature_2}，一个波函数可用这些本征右矢展开：
-\[\varphi=\infty_{-\infty}^{+\infty}\dd p\ket p\braket{p|\varphi}.\]
+\[\label{eq:spectrum_decomposition_over_p}
+	\varphi=\infty_{-\infty}^{+\infty}\dd p\ket p\braket{p|\varphi}.\]
 显然，右矢\(\ket p\)并不在\hs 中——需要一个更大的线性空间来容纳它们。
-\longRadicalTranslation{这时}{It happens that}那些\(\ket p\)获得了作为\(\Phi\)上的反线性泛函的含义。即，\(\ket p\in\Phi^\times\)
+\longRadicalTranslation{为此那些\(\ket p\)获得了新的含义，即\(\ket p\in\Phi^\times\)，其中\(\Phi^\times\)表示的是空间\(\Phi\)上的反线性泛函所构成的集合。}{It happens that those \(\ket p\) acquire meaning as antilinear functionals
+over the space \(\Phi\). That is, \(\ket p\in\Phi^\times\), where \(\Phi^\times\) represents the set of antilinear functionals
+over the space \(\Phi\).}
+类似的考虑对位置算子\(Q\)也成立：
+\[Q\ket x=x\ket x,\quad \ket x\in\Phi^\times,\quad -\infty<x<+\infty.\]
+\[\label{eq:spectrum_decomposition_over_x}
+	\varphi=\int_{-\infty}^{+\infty}\dd x\ket x\braket{x|\varphi},\quad\varphi\in\Phi.\]
+通过这种方式，谐振子的\gelfandtriplet
+\[\Phi\subset\cH\subset\Phi^\times\]
+就以一种自然的方式出现了。
+\hs\(\cH\)是来自于波函数须可平方归一化的要求。
+子空间\(\Phi\)是物理波函数的集合，即：可求任意期望、不确定度、对易子的波函数。
+对偶空间\(\Phi^\times\)则包含了关联于\longRadicalTranslation{可观测量}{the observables of the algebra}%{原文为「」。疑似应为\bracketedText{可观测量的代数}，但}
+连续谱的右矢。
+这些右矢定义为空间\(\Phi\)上的泛函，并可用于展开任意\(\varphi\in\Phi\)，如\cref{eq:spectrum_decomposition_over_p}或\cref{eq:spectrum_decomposition_over_x}。
+
+这些思想将在\cref{chap:3}中详述，在那里我们将构造谐振子的\rhs。
+谐振子将以一种不同于量子力学教材的视角被研讨。
+谐振子的标准处理手段是从算子代数的（位置）\schrodinger 实现出发，也就是说，将\(Q,P,H\)的众所周知的微分表达式视为是可靠的。
+从这些表达式中可推出如\ccr 这样的结果。
+亦可推出\hamilton 算子的本征值是可数的，而相应的本征向量由\hermite 多项式给出。
+\longRadicalTranslation{也用到了}{are also assumed}\dirac 体系的前述\longRadicalTranslation{预设}{prescription}，尽管未提及的是，\hs 的数学并不能与之\longRadicalTranslation{实现}{incorporate}。
+在本文中，我们将不会把谐振子代数的位置实现视为是可靠的，而是从代数的假设中推出这一实现。
+我们将仅是假定一些\(P,Q,H\)所满足的代数关系，亦即\ccr
+\[\cmtt{P}{Q}:=PQ-QP=-i\hbar I,\]
+以及用\(P,Q\)写出的\(H\)的表达式
+\[H=\frac{1}{2\mu}P^2+\frac{\mu\omega^2}{2}Q^2.\]
+我们将追加一个必要的假定，即能量算子至少存在一个本征向量\(\phi_0\)：
+\[H\phi_0=\frac{\hbar\omega}{2}\phi_0.\]
+从这一代数上的出发点，我们可先推出\(H\)有可数个本征值\(\hbar\omega(n+1/2),\ n=0,1,2,\dots\)对应于某些本征向量\(\phi_0\)。
+\(\phi_n\)所\longRadicalTranslation{张成}{span}的线性空间将被称为\(\Psi\)。
+这一线性空间将配备以两种不同的拓扑：通常的\hs 拓扑，它可从\(\Psi\)中生成\(\cH\)；以及另一更强的\longRadicalTranslation{核型}{nuclear}拓扑，它从\(\Psi\)生成了\(\Phi\)。
+这个\nuclear 拓扑将使得该代数中的元素都是连续算子。
+一旦构造出了\(\Phi\)，我们就将构造出\(\Phi^\times\)从而构造出谐振子的\rhs：
+\[\label{eq:gelfand_triplet_2}
+	\Phi\subset\cH\subset\Phi^\times.\]
+本征右矢\(\ket p,\ket x\)将成为\(\Phi\)上的连续反线性泛函，也就是说它们将是\(\Phi^\times\)的元素。
+本征右矢方程\(Q\ket x=x\ket x,\ P\ket p=p\ket p\)则\longRadicalTranslation{对应于}{find their mathematical setting as}\(\Phi\)上的泛函方程。
+而后会给出\gelfand-\maurin 定理的表述——它将保证位置、动量算子的一组完备广义本征向量集合的存在性，
+并展示该定理从数学上证明了那启发性的\dirac 基向量展开\cref{eq:spectrum_decomposition_over_p}和\cref{eq:spectrum_decomposition_over_x}。
+我们将推导谐振子的\schrodinger 表示。
+在这一表示中，将得到\(P,Q,H\)的基于微分算子的标准表达式。
+也将用函数与分布的空间来实现\nref{\RHS}{eq:gelfand_triplet_2}的位置。
+空间\(\Phi\)将实现为\schwartz 空间\(\cS(\R)\)，而\(\Phi^\times\)将由缓增分布空间\(\cS(\R)^\times\)实现。
+因此\nref{\RHS}{eq:gelfand_triplet_2}的位置实现写作
+\[\cS(\R)\subset L^2(\R)\subset\cS(\R)^\times.\]
+\(H\)的本征向量\(\phi_n\)将由\hermite 多项式实现。
+
+因此，我们将为谐振子的物理所需的操作给出一个适当的数学框架，并关注\bracketedText{谐振子算子代数\schrodinger 实现何以可被单独讨论}的问题。
+重要的是，这种本文\emph{\longRadicalTranslation{作为特例}{ad hoc}}引入的实现可从\RHS 框架中的适当代数假定中推出。
+
+\subsection{方势垒的一个\rhs}
+
+量子力学的基本方程是\schrodinger 方程。
+因此，说明\RHS 包含有量子力学所需的数学方法就等同于是说明\schrodinger 方程的解的自然框架是\RHS 。
+为说明这一点，我们将使用方势垒的例子。%cite
+
+时相关\schrodinger 方程写作
+\[\label{eq:t_dep_schrodinger}
+	i\hbar\pdo{t}\varphi(t)=H\varphi(t),\]
+其中\(H\)表示\hamilton 算子，而\(\varphi(t)\)表示波函数\(\varphi\)中时间\(t\)的值。
+\dirac 体系以下面的方式来形式上求解这一方程：对于每个\hamilton 算子的谱\(\sp(H)\)中的能量值\(E\)，存在一右矢\(\ket E\)为\(H\)的一个本征向量：
+\[\label{eq:eigen_H}
+	H\ket E=E\ket E,\quad E\in\sp(H).\]
+这些本征右矢形成了一组可展开任意波函数\(\varphi\)如下的完备基：
+\[\varphi=\int\dd E\ket E\braket{E|\varphi}\defaseq\int\dd E\varphi(E)\ket E.\]
+从\cref{eq:t_dep_schrodinger}所得的时相关解可通过对从\cref{eq:eigen_H}所得的时不相关解进行\fourier 变换来得到：
+\[\varphi(t)=\int\dd Ee^{-iEt/\hbar}\varphi(E).\]
+若\hamilton 算子的谱有连续的部分，且若能量\(E\)属于该谱的这一连续部分，则对应的作为\cref{eq:eigen_H}的解的本征右矢\(\ket E\)就不是平方可积的，也就是说\(\ket E\)不是\hs 的元素。
+如谐振子的情况那样，\hs 并不能处理这些不可归一化的右矢，而\RHS 框架可以。
+
+\RHS 框架的主要短板是它未提供构造\(\Phi,\Phi^\times\)的方法。
+核型谱定理的一般表述仅仅是保证了本征右矢\(\ket E\)的存在性，且它假定空间\(\Phi,\Phi^\times\)已事先给出。%cite
+因此，我们需要一个为\schrodinger\hamilton 算子构造\RHS 的系统性步骤。
+本文的第四章将提供这一系统性步骤。%cite
+为使其明晰，我们将在方势垒中阐释这一步骤，尽管同样的方法可适用于更为广泛的一类势能。
+
+构造方势垒的\RHS 的步骤如下。
+首先，在径向位置表象中写下时无关\schrodinger 方程：
+\[\label{eq:radial_schrodinger}
+	\braket{r|H|E}\equiv h\braket{r|E}=E\braket{r|E},\]
+其中\(h\)是下面的\schrodinger 微分算子：
+\[h\defaseq-\frac{\hbar^2}{2m}\frac{\dd^2}{\dd r^2}+V(r),\]
+而
+\[V(r)=\begin{cases}
+	0&0<r<a\\
+	V_0&a<r<b\\
+	0&b<r<\infty\\
+\end{cases}\]
+是方型垒势。
+通过对时无关\schrodinger 方程\cref{eq:radial_schrodinger}应用\humanNameTranslation{斯图姆}{Sturm}-\humanNameTranslation{刘维尔}{Liouville}理论（\weyl 理论），可得到一个定义域\(\cD(H)\)使得微分算子\(h\)在其上是自伴的。%cite
